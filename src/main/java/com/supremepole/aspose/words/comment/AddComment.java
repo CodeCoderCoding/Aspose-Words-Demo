@@ -1,4 +1,4 @@
-package com.supremepole.aspose.words;
+package com.supremepole.aspose.words.comment;
 
 import com.aspose.words.*;
 
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Date;
 
-public class HelloWorldAsposeWordsWithComment {
+public class AddComment {
     public static void main(String[] args) throws Exception {
         // 创建一个新的 Document 对象
         Document doc = new Document();
@@ -16,16 +16,16 @@ public class HelloWorldAsposeWordsWithComment {
         DocumentBuilder builder = new DocumentBuilder(doc);
 
         // 写入 "Hello World" 文本
-        builder.writeln("Hello World");
+        builder.writeln("Hello World, Good Morning.");
 
         // 获取当前工作目录的路径
         String currentDirectory = System.getProperty("user.dir");
 
         // 构造完整的文件路径
-        String filePath = Paths.get(currentDirectory, "HelloWorld.docx").toString();
+        String filePath = Paths.get(currentDirectory, "HelloWorldWithComment.docx").toString();
 
         // 使用 Aspose.Words 进行评论添加
-        String wordToFind = "Hello";
+        String wordToFind = "Good";
 
         FindReplaceOptions options = new FindReplaceOptions();
         options.setUseSubstitutions(true);
