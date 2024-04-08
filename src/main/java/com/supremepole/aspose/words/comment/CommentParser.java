@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 public class CommentParser {
     public static void main(String[] args) throws Exception {
         // 获取当前工作目录的路径
-        String currentDirectory = System.getProperty("user.dir");
+        String currentDirectory = System.getProperty("user.dir")+"\\src\\main\\resources\\comment";
 
         // 构造完整的文件路径
         String filePath = Paths.get(currentDirectory, "HelloWorld.docx").toString();

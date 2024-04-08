@@ -24,7 +24,7 @@ public class HelloWorldAsposeWords {
         comment.getFirstParagraph().getRuns().add(new Run(doc, "Comment text."));
 
         // 获取当前工作目录的路径
-        String currentDirectory = System.getProperty("user.dir");
+        String currentDirectory = System.getProperty("user.dir")+"\\src\\main\\resources";
 
         // 构造完整的文件路径
         String filePath = Paths.get(currentDirectory, "HelloWorld.docx").toString();
