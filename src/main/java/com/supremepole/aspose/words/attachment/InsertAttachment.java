@@ -20,6 +20,9 @@ public class InsertAttachment {
             // 指定要插入的附件文件的路径
             String attachmentPath = currentDirectory + File.separator + "attachment.docx";
 
+            //指定位置插入
+            //builder.moveTo();
+
             // 插入OLE对象
             // isLinked设置为false用于插入附件到word文档中，而不是链接的形式
             // asIcon设置为true用于在word文档中显示附件的图标
