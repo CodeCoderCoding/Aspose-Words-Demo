@@ -17,12 +17,19 @@ public class WordParsingExample {
         NodeCollection shapes = doc.getChildNodes(NodeType.SHAPE, true);
         for (Shape shape : (Iterable<Shape>) shapes) {
             if (shape.hasImage()) {
+                ImageData imageData=shape.getImageData();
+                shape.getName();
+                shape.getAlternativeText();
+                System.out.println(imageData.getTitle());
                 if (shape.getOleFormat() != null) {
                     // 处理附件占位图标
                     System.out.println("附件占位图标路径: " + shape.getOleFormat().getIconCaption());
+                    imageData.getSourceFullName();
+
                 }else {
                     // 处理普通图片
                     System.out.println("普通图片路径: " + shape.getImageData().getSourceFullName());
+                    imageData.getTitle();
                 }
             }
         }

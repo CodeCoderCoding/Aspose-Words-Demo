@@ -16,19 +16,6 @@ public class WordToHtmlConverter {
             // 加载Word文档
             Document doc = new Document(inputFilePath);
 
-            // 获取文档中的所有图片
-            NodeCollection<Shape> shapes = doc.getChildNodes(NodeType.SHAPE, true);
-            // 遍历所有图片
-            for (Shape shape : shapes) {
-                if (shape.hasImage()) {
-                    if (shape.getOleFormat() != null) {
-                        // 获取图片对象
-                        ImageData image = shape.getImageData();
-                        
-                    }
-                }
-            }
-
             // saveOptions
             HtmlSaveOptions saveOptions=new HtmlSaveOptions();
             saveOptions.setSaveFormat(SaveFormat.HTML);
