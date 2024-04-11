@@ -17,6 +17,7 @@ public class InsertAttachment {
             // 获取当前工作目录的路径
             String currentDirectory = System.getProperty("user.dir")+"\\src\\main\\resources\\attachment";
 
+
             // 指定要插入的附件文件的路径
             String attachmentPath = currentDirectory + File.separator + "attachment.docx";
 
@@ -26,7 +27,9 @@ public class InsertAttachment {
             // 插入OLE对象
             // isLinked设置为false用于插入附件到word文档中，而不是链接的形式
             // asIcon设置为true用于在word文档中显示附件的图标
-            builder.insertOleObject(attachmentPath, false, true, null);
+            // inputStream不为空的话，用于设置附件在文档中的展示形式
+            InputStream inputStream= new FileInputStream(currentDirectory+"\\img.png");
+            builder.insertOleObject(attachmentPath, false, true, inputStream);
 
             // 保存文档
             doc.save(currentDirectory + File.separator + "fullDoc.docx");
