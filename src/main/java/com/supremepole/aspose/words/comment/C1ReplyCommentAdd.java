@@ -3,6 +3,7 @@ package com.supremepole.aspose.words.comment;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
 import org.jsoup.select.Elements;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -29,8 +30,12 @@ public class C1ReplyCommentAdd {
                 String name = span.previousElementSibling().select("a[name]").attr("name");
 
                 if (!name.equals(value)) {
-                    Element newSpan = Jsoup.parseBodyFragment("<span><a name=\"" + value + "\"></a></span>");
-                    span.before(newSpan);
+                    String valueOfNewTag = "_cmntref2"; // 假设要插入的节点的值
+                    // 创建新的节点
+                    Element newElement = new Element(Tag.valueOf("span"), "");
+                    Element aElement = new Element(Tag.valueOf("a"), "").attr("name", valueOfNewTag);
+                    newElement.appendChild(aElement);
+                    span.before(aElement);
                 }
             }
         }
